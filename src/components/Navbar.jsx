@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Navbar.css";
-function Navbar(){
-
+function Navbar({profile}) {
+console.log(profile);
     const [menuOpen, setMenuOpen] =useState(false);
     function toggleMenu(){
         setMenuOpen(!menuOpen);
@@ -13,7 +13,7 @@ function Navbar(){
         <header className="navbar">
             <nav className="container navbar-inner">
                 <a href="#home" className="navbar-logo" onClick={closeMenu}>
-                    Pawan Kumar
+                    {profile.name}
                 </a>
                 <button className="navbar-toggle"
                 onClick={toggleMenu}
